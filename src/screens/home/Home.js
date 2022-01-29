@@ -14,10 +14,11 @@ import { useDispatch } from "react-redux";
 import { getTags, fetchCategores, fetchProducts } from "../../redux/actions";
 
 const Home = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetchCategores();
-    fetchProducts();
-    getTags();
+    dispatch(fetchCategores());
+    dispatch(fetchProducts());
+    dispatch(getTags());
   }, []);
   return (
     <SafeAreaView style={styles.container}>

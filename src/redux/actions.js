@@ -44,11 +44,10 @@ export const getMediaImage = async (id) => {
     .catch((err) => console.log("ERROR FETCHING MEDIA", err));
 };
 export const getTags = () => {
-  return async (dispatch) => {
+  return (dispatch) => {
     axios
       .get(`${BASE_URL}${GET_TAGS}`)
       .then((res) => {
-        console.log("RESPONSE", res.data);
         dispatch({
           type: "FETCH_TAGS",
           payload: res.data,
